@@ -1,0 +1,43 @@
+/* Start of Main Banner */
+.banner .banner-item {
+  display: flex;
+  height: 350px;
+}
+.banner .banner-item img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: auto;
+}
+/* End of Main Banner */
+
+/* Start of Best Seller & Offers */
+.best-seller .owl-stage,
+.offers .owl-stage {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+[dir="ltr"] .best-seller .owl-stage,
+[dir="ltr"] .offers .owl-stage  {
+  padding-left: 0.5rem !important;
+}
+[dir="rtl"] .best-seller .owl-stage,
+[dir="rtl"] .offers .owl-stage {
+  padding-right: 0.5rem !important;
+}
+/* End of Best Seller & Offers */
+
+/* Start of New Arrivals */
+.new-arrival-item {
+  display: flex;
+  height: 350px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.new-arrival-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+/* End of New Arrivals */

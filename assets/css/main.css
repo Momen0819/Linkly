@@ -1,0 +1,498 @@
+/* Start of Main Rules */
+/* Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  outline: none;
+}
+:root {
+  --main-color: #12264b;
+  --alt-color: #db2026;
+  --grey-light: #fafafa;
+  --grey-dark: #eee;
+  --light: #fff;
+  --dark: rgba(0, 0, 0, 0.87);
+  --radius: 8px;
+  --spacing: 8px;
+  --shadow-sm: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
+    rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+  --shadow-md: rgb(0 0 0 / 20%) 0px 2px 4px -1px,
+    rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+  --shadow-lg: rgb(0 0 0 / 20%) 0px 5px 5px -3px,
+    rgb(0 0 0 / 14%) 0px 8px 10px 1px, rgb(0 0 0 / 12%) 0px 3px 14px 2px;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: var(--spacing);
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(201, 198, 198);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: var(--radius);
+}
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  color: var(--dark);
+  background-color: var(--grey-light);
+  font-size: 16px;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.smooth {
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.icon {
+  display: flex;
+}
+.icon-sm svg {
+  width: 12px;
+  height: 12px;
+}
+.icon-md svg {
+  width: 22px;
+  height: 22px;
+}
+[dir="rtl"] .flip {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.g1 {
+  gap: var(--spacing);
+}
+.g2 {
+  gap: calc(var(--spacing) * 2);
+}
+.fs-sm {
+  font-size: 0.75rem;
+}
+.w-fit {
+  width: fit-content;
+}
+.img-contain {
+  object-fit: contain;
+}
+.text-main {
+  color: var(--main-color);
+}
+.text-alt {
+  color: var(--alt-color);
+}
+.text-grey-dark {
+  color: var(--grey-dark);
+}
+.bg-grey-dark {
+  background-color: var(--grey-dark);
+}
+/* End of Main Rules */
+
+/* Start of Buttons */
+.btn.btn-main,
+.btn.btn-outline-main,
+.btn.btn-alt,
+.btn.btn-outline-alt,
+.btn.btn-text-alt {
+  padding: 0.25rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--spacing);
+  min-width: 80px;
+  height: 40px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  border-radius: var(--radius);
+  white-space: nowrap;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.btn.btn-main {
+  color: var(--light);
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+.btn.btn-main:hover {
+  color: var(--main-color);
+  background-color: var(--grey-light);
+}
+.btn.btn-outline-main {
+  color: var(--main-color);
+  background-color: var(--grey-light);
+  border: 1px solid var(--main-color);
+}
+.btn.btn-outline-main:hover {
+  color: var(--light);
+  background-color: var(--main-color);
+}
+.btn.btn-alt {
+  color: var(--light);
+  background-color: var(--alt-color);
+  border: 1px solid var(--alt-color);
+}
+.btn.btn-alt:hover {
+  color: var(--alt-color);
+  background-color: var(--light);
+}
+.btn.btn-outline-alt {
+  color: var(--alt-color);
+  border: 1px solid var(--alt-color);
+  background-color: var(--light);
+}
+.btn.btn-outline-alt:hover {
+  color: var(--light);
+  background-color: var(--alt-color);
+}
+.btn.btn-text-alt {
+  color: var(--alt-color);
+}
+.btn.btn-text-alt:hover {
+  color: var(--main-color);
+}
+/* End of Buttons */
+
+/* Start of Bootstrap Reset */
+.btn {
+  padding: 0;
+}
+.btn-check:focus + .btn,
+.btn:focus,
+.btn-close:focus {
+  box-shadow: none;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: var(--dark);
+}
+/* OffCanvas */
+[dir="ltr"] .offcanvas-start {
+  left: 0;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+[dir="rtl"] .offcanvas-start {
+  left: auto;
+  right: 0;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  transform: translateX(100%);
+}
+[dir="ltr"] .offcanvas-end {
+  right: 0;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  transform: translateX(100%);
+}
+[dir="rtl"] .offcanvas-end {
+  right: auto;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.offcanvas-start.show,
+.offcanvas-end.show {
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+}
+/* End of Bootstrap Reset */
+
+/* Start of Custom OWL */
+.owl-carousel {
+  position: relative;
+}
+/* Arrows */
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--dark);
+  background-color: var(--light);
+  box-shadow: var(--shadow-sm);
+  border-radius: 50%;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.owl-carousel .owl-nav button.owl-prev:hover,
+.owl-carousel .owl-nav button.owl-next:hover {
+  color: var(--light);
+  background-color: var(--main-color);
+}
+.owl-carousel .owl-nav button.owl-prev.disabled,
+.owl-carousel .owl-nav button.owl-next.disabled {
+  display: none;
+}
+[dir="ltr"] .owl-carousel .owl-nav button.owl-prev {
+  left: 0.5rem;
+}
+[dir="rtl"] .owl-carousel .owl-nav button.owl-prev {
+  left: auto;
+  right: 0.5rem;
+}
+[dir="ltr"] .owl-carousel .owl-nav button.owl-next {
+  right: 0.5rem;
+}
+[dir="rtl"] .owl-carousel .owl-nav button.owl-next {
+  right: auto;
+  left: 0.5rem;
+}
+/* Dots */
+.owl-carousel .owl-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.owl-carousel .owl-dots .owl-dot {
+  width: 32px;
+  height: 15px;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--main-color);
+  background-color: var(--grey-dark);
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.owl-carousel .owl-dots .owl-dot.active,
+.owl-carousel .owl-dots .owl-dot:hover {
+  background-color: var(--main-color);
+}
+/* End of Custom OWL */
+
+/* Start of Product */
+.product {
+  overflow: hidden;
+  background-color: var(--light);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius);
+}
+.product .image-wrapper {
+  position: relative;
+  height: 200px;
+  display: flex;
+  overflow: hidden;
+}
+.product .image-wrapper img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+}
+.product .discount,
+.product .event {
+  position: absolute;
+  padding: 0.25rem 0.75rem;
+  text-transform: uppercase;
+  text-align: center;
+  top: 0;
+  font-size: 0.75rem;
+}
+.product .discount {
+  color: var(--light);
+  background-color: var(--alt-color);
+}
+[dir="ltr"] .product .discount {
+  left: 0;
+}
+[dir="rtl"] .product .discount {
+  left: auto;
+  right: 0;
+}
+.product .event {
+  color: var(--light);
+  background-color: var(--main-color);
+}
+[dir="ltr"] .product .event {
+  right: 0;
+}
+[dir="rtl"] .product .event {
+  right: auto;
+  left: 0;
+}
+.product .product-info {
+  padding: 0.75rem;
+  min-height: 160px;
+}
+.product .product-title-link {
+  color: var(--main-color);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.product:hover .product-title-link {
+  color: var(--alt-color);
+}
+.product .product-title-link .product-title {
+  width: 100%;
+  margin-bottom: 0;
+  height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.product .current-price {
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+.product .old-price {
+  color: var(--dark);
+  text-decoration: line-through;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
+}
+.product-actions:not(.added) .remove-from-cart,
+.product-actions.added .add-to-cart {
+  display: none;
+}
+/* End of Product */
+
+/* Start of Go To Top Button */
+.go-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  background-color: var(--dark);
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+}
+.go-to-top:hover {
+  color: var(--light);
+}
+.go-to-top:focus {
+  box-shadow: var(--shadow-lg);
+}
+.go-to-top:not(.show) {
+  display: none;
+}
+[dir="ltr"] .go-to-top {
+  left: 1.5rem;
+}
+[dir="rtl"] .go-to-top {
+  left: auto;
+  right: 1.5rem;
+}
+/* End of Go To Top Button */
+
+/* Start of Social Contacts */
+.social-contacts {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  position: fixed;
+  bottom: 1.5rem;
+  z-index: 10;
+  height: 45px;
+}
+.social-contacts:hover {
+  height: 210px;
+}
+[dir="ltr"] .social-contacts {
+  right: 1.5rem;
+}
+[dir="rtl"] .social-contacts {
+  right: auto;
+  left: 1.5rem;
+}
+.social-contacts .social-item {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+.social-contacts .social-item:nth-child(2) {
+  margin-bottom: 55px;
+}
+.social-contacts .whatsapp {
+  -webkit-transition-delay: 100ms;
+  -moz-transition-delay: 100ms;
+  transition-delay: 100ms;
+  margin-bottom: 10px;
+}
+.social-contacts .fb-messenger {
+  -webkit-transition-delay: 150ms;
+  -moz-transition-delay: 150ms;
+  transition-delay: 150ms;
+  margin-bottom: 10px;
+}
+.social-contacts .social-item:not(.trigger) {
+  background-color: var(--light);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  transform: scale(0);
+}
+.social-contacts:hover .social-item:not(.trigger) {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+}
+.social-contacts .social-item:not(.trigger) svg {
+  width: 30px;
+  height: 30px;
+}
+.social-contacts .trigger {
+  color: var(--light);
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+}
+.social-contacts .call {
+  color: rgba(0, 0, 0, 0.6);
+}
+/* End of Social Contacts */
